@@ -63,32 +63,75 @@ console.log(indice)
 // 10. Reemplazar un elemento en un array
 // Enunciado: Dado un array, reemplaza un elemento en un índice específico por otro y devuelve el array modificado.
 
-frutas.splice(1,0,"mandarina")
+frutas.splice(1, 0, "mandarina")
 console.log(frutas)
 
 
 // 11. Sumar todos los elementos del array
 // Enunciado: Dado un array de números, suma todos sus elementos y devuelve el resultado.
 
+console.log(numeros)
 
+let suma = numeros.reduce(function (acumulador, num) {
+    return acumulador + num;
+
+});
+console.log(suma)
 
 // 12. Multiplicar todos los elementos del array
 // Enunciado: Dado un array de números, multiplica cada elemento por un valor específico y devuelve el nuevo array.
 
+function multiplicar(numeros, valor) {
+
+    return numeros.map(num => num * valor)
+
+}
+const resultado = multiplicar(numeros, 5)
+console.log(resultado)
+
 // 13. Filtrar números mayores a un valor
 // Enunciado: Dado un array de números y un valor, devuelve un nuevo array con los números que sean mayores a ese valor.
 
-// 14. Verificar si todos los elementos son mayores a un número
+function filtrarMayores(numero, valor) {
+
+    return numeros.filter(num => num > valor)
+}
+
+const res = filtrarMayores(numeros, 6)
+console.log(res)
+
+// 14. Verificar si todos los elementos son mayores a un númeroS
 // Enunciado: Dado un array de números y un valor, verifica si todos los elementos del array son mayores a ese valor.
+function sonMayores(numero, valor) {
+    return numeros.every(num => num > valor)
+}
+const ress = sonMayores(numeros, 0)
+console.log(ress)
 
 // 15. Obtener el primer elemento que cumple una condición
 // Enunciado: Dado un array de números y un valor, encuentra el primer número que sea mayor al valor dado.
 
+function encontrarPrimero(numeros, valor) {
+    return numeros.find(num => num > valor);
+}
+
+const resu = encontrarPrimero(numeros, 4)
+
+console.log(resu)
 // 16. Imprimir cada elemento del array
 // Enunciado: Dado un array de números, recorre el array e imprime cada uno de sus elementos en la consola.
-
+function imprimirArray(numeros) {
+    numeros.forEach(num => console.log(num));
+}
+imprimirArray(numeros)
 // 17. Crear un array con el doble de cada número
 // Enunciado: Dado un array de números, genera un nuevo array en el que cada número sea el doble de su valor original.
 
+const duplicados = numeros.map(num => num * 2);
+console.log(duplicados);
+
 // 18. Convertir un array de nombres en mayúsculas
 // Enunciado: Dado un array de nombres (strings), genera un nuevo array donde cada nombre esté en mayúsculas.
+
+const mayusculas = frutas.map(frutas => frutas.toUpperCase());
+console.log(mayusculas)
